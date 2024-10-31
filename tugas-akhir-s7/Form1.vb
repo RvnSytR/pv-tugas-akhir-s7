@@ -26,7 +26,7 @@
             If targetText IsNot " " Then Await Delay(speed)
         Next
 
-        label.Text += vbCrLf
+        '?? label.Text += vbCrLf 
     End Function
 
     Private Sub ResetForm()
@@ -38,7 +38,7 @@
         Calculate.Visible = True
 
         LoadingText.Visible = False
-        LoadingText.Text = "Loading..."
+        LoadingText.Text = ""
 
         ZodPanel.Visible = False
         ZodLabel.Visible = False
@@ -80,7 +80,8 @@
 
         'Setter : Loading State
         LoadingText.Visible = True
-        Await Delay(1.5)
+        Await AnimateLabel(LoadingText, "Loading...", 0.25)
+        Await Delay(1.75)
         LoadingText.Visible = False
 
         'Setter : Prediction Page
