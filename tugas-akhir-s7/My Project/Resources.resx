@@ -118,43 +118,43 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="blurry-gradient-haikei" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\blurry-gradient-haikei.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="virgo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\virgo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="taurus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\taurus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="scorpio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\scorpio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sagittarius" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sagittarius.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="aquarius" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\aquarius.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pisces" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pisces.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="libra" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\libra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="leo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\leo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="gemini" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gemini.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="capricron" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\capricron.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="virgo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\virgo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cancer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cancer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="scorpio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\scorpio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="libra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\libra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sagittarius" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sagittarius.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="aries" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\aries.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="aquarius" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\aquarius.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cancer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cancer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="taurus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\taurus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="capricron" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\capricron.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="leo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\leo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

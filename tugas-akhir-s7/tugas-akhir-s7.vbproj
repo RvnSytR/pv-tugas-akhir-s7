@@ -158,5 +158,8 @@
   <ItemGroup>
     <None Include="Resources\aquarius.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -23,7 +23,6 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Title = New System.Windows.Forms.Label()
-        Me.Calculate = New System.Windows.Forms.Button()
         Me.Subtitle2 = New System.Windows.Forms.Label()
         Me.Subtitle1 = New System.Windows.Forms.Label()
         Me.LoadingText = New System.Windows.Forms.Label()
@@ -34,9 +33,12 @@ Partial Class Form1
         Me.DescLabel = New System.Windows.Forms.Label()
         Me.CareerLabel = New System.Windows.Forms.Label()
         Me.ZodCareer = New System.Windows.Forms.Label()
-        Me.LoveLabel = New System.Windows.Forms.Label()
-        Me.ZodLove = New System.Windows.Forms.Label()
+        Me.BestLoveLabel = New System.Windows.Forms.Label()
+        Me.ZodBestLove = New System.Windows.Forms.Label()
         Me.BackLink = New System.Windows.Forms.Label()
+        Me.Calculate = New System.Windows.Forms.Label()
+        Me.ZodWorstLove = New System.Windows.Forms.Label()
+        Me.WorstLoveLabel = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Title
@@ -51,17 +53,6 @@ Partial Class Form1
         Me.Title.Size = New System.Drawing.Size(505, 55)
         Me.Title.TabIndex = 0
         Me.Title.Text = "What Zodiac Sign Am I ?"
-        '
-        'Calculate
-        '
-        Me.Calculate.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Calculate.Location = New System.Drawing.Point(210, 450)
-        Me.Calculate.Margin = New System.Windows.Forms.Padding(0)
-        Me.Calculate.Name = "Calculate"
-        Me.Calculate.Size = New System.Drawing.Size(185, 35)
-        Me.Calculate.TabIndex = 6
-        Me.Calculate.Text = "Calculate My Sign"
-        Me.Calculate.UseVisualStyleBackColor = True
         '
         'Subtitle2
         '
@@ -152,7 +143,7 @@ Partial Class Form1
         Me.DescLabel.AutoSize = True
         Me.DescLabel.BackColor = System.Drawing.Color.Transparent
         Me.DescLabel.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DescLabel.ForeColor = System.Drawing.Color.LightGray
+        Me.DescLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.DescLabel.Location = New System.Drawing.Point(45, 260)
         Me.DescLabel.Margin = New System.Windows.Forms.Padding(0)
         Me.DescLabel.Name = "DescLabel"
@@ -164,8 +155,8 @@ Partial Class Form1
         Me.CareerLabel.AutoSize = True
         Me.CareerLabel.BackColor = System.Drawing.Color.Transparent
         Me.CareerLabel.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CareerLabel.ForeColor = System.Drawing.Color.LightGray
-        Me.CareerLabel.Location = New System.Drawing.Point(44, 410)
+        Me.CareerLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.CareerLabel.Location = New System.Drawing.Point(44, 425)
         Me.CareerLabel.Margin = New System.Windows.Forms.Padding(0)
         Me.CareerLabel.Name = "CareerLabel"
         Me.CareerLabel.Size = New System.Drawing.Size(0, 19)
@@ -177,7 +168,7 @@ Partial Class Form1
         Me.ZodCareer.BackColor = System.Drawing.Color.Transparent
         Me.ZodCareer.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ZodCareer.ForeColor = System.Drawing.Color.White
-        Me.ZodCareer.Location = New System.Drawing.Point(44, 375)
+        Me.ZodCareer.Location = New System.Drawing.Point(44, 390)
         Me.ZodCareer.Margin = New System.Windows.Forms.Padding(0)
         Me.ZodCareer.Name = "ZodCareer"
         Me.ZodCareer.Size = New System.Drawing.Size(76, 27)
@@ -185,37 +176,37 @@ Partial Class Form1
         Me.ZodCareer.Text = "- Karir"
         Me.ZodCareer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'LoveLabel
+        'BestLoveLabel
         '
-        Me.LoveLabel.AutoSize = True
-        Me.LoveLabel.BackColor = System.Drawing.Color.Transparent
-        Me.LoveLabel.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LoveLabel.ForeColor = System.Drawing.Color.LightGray
-        Me.LoveLabel.Location = New System.Drawing.Point(45, 560)
-        Me.LoveLabel.Margin = New System.Windows.Forms.Padding(0)
-        Me.LoveLabel.Name = "LoveLabel"
-        Me.LoveLabel.Size = New System.Drawing.Size(0, 19)
-        Me.LoveLabel.TabIndex = 18
+        Me.BestLoveLabel.AutoSize = True
+        Me.BestLoveLabel.BackColor = System.Drawing.Color.Transparent
+        Me.BestLoveLabel.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BestLoveLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BestLoveLabel.Location = New System.Drawing.Point(45, 565)
+        Me.BestLoveLabel.Margin = New System.Windows.Forms.Padding(0)
+        Me.BestLoveLabel.Name = "BestLoveLabel"
+        Me.BestLoveLabel.Size = New System.Drawing.Size(0, 19)
+        Me.BestLoveLabel.TabIndex = 18
         '
-        'ZodLove
+        'ZodBestLove
         '
-        Me.ZodLove.AutoSize = True
-        Me.ZodLove.BackColor = System.Drawing.Color.Transparent
-        Me.ZodLove.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ZodLove.ForeColor = System.Drawing.Color.White
-        Me.ZodLove.Location = New System.Drawing.Point(45, 525)
-        Me.ZodLove.Margin = New System.Windows.Forms.Padding(0)
-        Me.ZodLove.Name = "ZodLove"
-        Me.ZodLove.Size = New System.Drawing.Size(99, 27)
-        Me.ZodLove.TabIndex = 17
-        Me.ZodLove.Text = "- Asmara"
-        Me.ZodLove.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ZodBestLove.AutoSize = True
+        Me.ZodBestLove.BackColor = System.Drawing.Color.Transparent
+        Me.ZodBestLove.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ZodBestLove.ForeColor = System.Drawing.Color.White
+        Me.ZodBestLove.Location = New System.Drawing.Point(45, 535)
+        Me.ZodBestLove.Margin = New System.Windows.Forms.Padding(0)
+        Me.ZodBestLove.Name = "ZodBestLove"
+        Me.ZodBestLove.Size = New System.Drawing.Size(124, 23)
+        Me.ZodBestLove.TabIndex = 17
+        Me.ZodBestLove.Text = "- Best Partner"
+        Me.ZodBestLove.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'BackLink
         '
         Me.BackLink.BackColor = System.Drawing.Color.Transparent
         Me.BackLink.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BackLink.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BackLink.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BackLink.ForeColor = System.Drawing.Color.White
         Me.BackLink.Location = New System.Drawing.Point(44, 700)
         Me.BackLink.Margin = New System.Windows.Forms.Padding(0)
@@ -224,17 +215,59 @@ Partial Class Form1
         Me.BackLink.TabIndex = 19
         Me.BackLink.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Calculate
+        '
+        Me.Calculate.BackColor = System.Drawing.Color.Transparent
+        Me.Calculate.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Calculate.Font = New System.Drawing.Font("Times New Roman", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Calculate.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Calculate.Location = New System.Drawing.Point(161, 475)
+        Me.Calculate.Name = "Calculate"
+        Me.Calculate.Size = New System.Drawing.Size(279, 35)
+        Me.Calculate.TabIndex = 20
+        Me.Calculate.Text = "Calculate My Sign"
+        Me.Calculate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'ZodWorstLove
+        '
+        Me.ZodWorstLove.AutoSize = True
+        Me.ZodWorstLove.BackColor = System.Drawing.Color.Transparent
+        Me.ZodWorstLove.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ZodWorstLove.ForeColor = System.Drawing.Color.White
+        Me.ZodWorstLove.Location = New System.Drawing.Point(44, 600)
+        Me.ZodWorstLove.Margin = New System.Windows.Forms.Padding(0)
+        Me.ZodWorstLove.Name = "ZodWorstLove"
+        Me.ZodWorstLove.Size = New System.Drawing.Size(136, 23)
+        Me.ZodWorstLove.TabIndex = 21
+        Me.ZodWorstLove.Text = "- Worst Partner"
+        Me.ZodWorstLove.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'WorstLoveLabel
+        '
+        Me.WorstLoveLabel.AutoSize = True
+        Me.WorstLoveLabel.BackColor = System.Drawing.Color.Transparent
+        Me.WorstLoveLabel.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WorstLoveLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.WorstLoveLabel.Location = New System.Drawing.Point(45, 630)
+        Me.WorstLoveLabel.Margin = New System.Windows.Forms.Padding(0)
+        Me.WorstLoveLabel.Name = "WorstLoveLabel"
+        Me.WorstLoveLabel.Size = New System.Drawing.Size(0, 19)
+        Me.WorstLoveLabel.TabIndex = 22
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 22.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.BackgroundImage = Global.tugas_akhir_s7.My.Resources.Resources.blurry_gradient_haikei
+        Me.BackgroundImage = Global.tugas_akhir_s7.My.Resources.Resources.bg
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(584, 861)
+        Me.ClientSize = New System.Drawing.Size(584, 811)
+        Me.Controls.Add(Me.WorstLoveLabel)
+        Me.Controls.Add(Me.ZodWorstLove)
+        Me.Controls.Add(Me.Calculate)
         Me.Controls.Add(Me.BackLink)
-        Me.Controls.Add(Me.LoveLabel)
-        Me.Controls.Add(Me.ZodLove)
+        Me.Controls.Add(Me.BestLoveLabel)
+        Me.Controls.Add(Me.ZodBestLove)
         Me.Controls.Add(Me.CareerLabel)
         Me.Controls.Add(Me.ZodCareer)
         Me.Controls.Add(Me.DescLabel)
@@ -245,16 +278,15 @@ Partial Class Form1
         Me.Controls.Add(Me.LoadingText)
         Me.Controls.Add(Me.Subtitle2)
         Me.Controls.Add(Me.Subtitle1)
-        Me.Controls.Add(Me.Calculate)
         Me.Controls.Add(Me.Title)
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(600, 900)
+        Me.MaximumSize = New System.Drawing.Size(600, 850)
         Me.MinimizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(600, 900)
+        Me.MinimumSize = New System.Drawing.Size(600, 814)
         Me.Name = "Form1"
         Me.Padding = New System.Windows.Forms.Padding(4)
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
@@ -266,7 +298,6 @@ Partial Class Form1
     End Sub
 
     Friend WithEvents Title As Label
-    Friend WithEvents Calculate As Button
     Friend WithEvents Subtitle2 As Label
     Friend WithEvents Subtitle1 As Label
     Friend WithEvents LoadingText As Label
@@ -277,7 +308,10 @@ Partial Class Form1
     Friend WithEvents DescLabel As Label
     Friend WithEvents CareerLabel As Label
     Friend WithEvents ZodCareer As Label
-    Friend WithEvents LoveLabel As Label
-    Friend WithEvents ZodLove As Label
+    Friend WithEvents BestLoveLabel As Label
+    Friend WithEvents ZodBestLove As Label
     Friend WithEvents BackLink As Label
+    Friend WithEvents Calculate As Label
+    Friend WithEvents ZodWorstLove As Label
+    Friend WithEvents WorstLoveLabel As Label
 End Class
