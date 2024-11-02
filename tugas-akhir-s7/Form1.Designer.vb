@@ -39,6 +39,7 @@ Partial Class Form1
         Me.Calculate = New System.Windows.Forms.Label()
         Me.ZodWorstLove = New System.Windows.Forms.Label()
         Me.WorstLoveLabel = New System.Windows.Forms.Label()
+        Me.ExitButton = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Title
@@ -208,7 +209,7 @@ Partial Class Form1
         Me.BackLink.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BackLink.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BackLink.ForeColor = System.Drawing.Color.White
-        Me.BackLink.Location = New System.Drawing.Point(44, 700)
+        Me.BackLink.Location = New System.Drawing.Point(44, 690)
         Me.BackLink.Margin = New System.Windows.Forms.Padding(0)
         Me.BackLink.Name = "BackLink"
         Me.BackLink.Size = New System.Drawing.Size(501, 27)
@@ -254,6 +255,19 @@ Partial Class Form1
         Me.WorstLoveLabel.Size = New System.Drawing.Size(0, 19)
         Me.WorstLoveLabel.TabIndex = 22
         '
+        'ExitButton
+        '
+        Me.ExitButton.BackColor = System.Drawing.Color.Transparent
+        Me.ExitButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ExitButton.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ExitButton.ForeColor = System.Drawing.Color.White
+        Me.ExitButton.Location = New System.Drawing.Point(44, 720)
+        Me.ExitButton.Margin = New System.Windows.Forms.Padding(0)
+        Me.ExitButton.Name = "ExitButton"
+        Me.ExitButton.Size = New System.Drawing.Size(501, 27)
+        Me.ExitButton.TabIndex = 23
+        Me.ExitButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 22.0!)
@@ -262,6 +276,7 @@ Partial Class Form1
         Me.BackgroundImage = Global.tugas_akhir_s7.My.Resources.Resources.bg
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(584, 811)
+        Me.Controls.Add(Me.ExitButton)
         Me.Controls.Add(Me.WorstLoveLabel)
         Me.Controls.Add(Me.ZodWorstLove)
         Me.Controls.Add(Me.Calculate)
@@ -314,4 +329,5 @@ Partial Class Form1
     Friend WithEvents Calculate As Label
     Friend WithEvents ZodWorstLove As Label
     Friend WithEvents WorstLoveLabel As Label
+    Friend WithEvents ExitButton As Label
 End Class

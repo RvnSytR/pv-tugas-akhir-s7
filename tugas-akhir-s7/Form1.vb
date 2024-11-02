@@ -67,6 +67,8 @@
 
         BackLink.Visible = False
         BackLink.Text = ""
+        ExitButton.Visible = False
+        ExitButton.Text = ""
     End Sub
 
     Private Sub FormLoad(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -110,16 +112,20 @@
         ZodBestLove.Visible = True
         BestLoveLabel.Visible = True
         AnimateLabel(ZodBestLove, "- Best Partner", 0.1)
-        AnimateLabel(BestLoveLabel, ZodiacBestPartLabel, 0.1)
+        AnimateLabel(BestLoveLabel, ZodiacBestPartLabel, 0.075)
 
         ZodWorstLove.Visible = True
         WorstLoveLabel.Visible = True
         AnimateLabel(ZodWorstLove, "- Worst Partner", 0.1)
-        AnimateLabel(WorstLoveLabel, ZodiacWorstPartLabel, 0.1)
+        AnimateLabel(WorstLoveLabel, ZodiacWorstPartLabel, 0.075)
 
         Await Delay(3)
+
         BackLink.Visible = True
         AnimateLabel(BackLink, "└>  Back To Calculator", 0.075)
+
+        ExitButton.Visible = True
+        AnimateLabel(ExitButton, "└>  Exit", 0.1)
     End Sub
 
     Private Sub GetZodiacSign(birthDate As Date)
@@ -338,7 +344,7 @@
                 ZodiacDescLabel = "Libra bisa menyesuaikan diri dengan orang yang mereka hadapi dan sering bertindak sebagai penengah dalam konflik. Mereka memiliki keterampilan sosial yang baik, membuat mereka mudah berteman dengan siapa saja."
                 ZodiacCareerLabel = "Libra cocok dalam pekerjaan yang melibatkan energi positif dan kemampuan membuat keputusan seperti diplomat, negosiator, manajer SDM, advokat hak asasi manusia, dan hakim."
 
-            Case "scorpion"
+            Case "scorpio"
                 ZodiacDescLabel = "Dengan intuisi tajam, Scorpio bisa membedakan kebenaran dan kepalsuan dengan mudah. Mereka lebih suka mencari fakta dari orang lain daripada menceritakan kisah mereka sendiri. Scorpio cenderung introspektif dan berhati-hati, kadang membuat mereka tampak lebih pendiam."
                 ZodiacCareerLabel = "Scorpio cocok dalam pekerjaan yang membutuhkan kecerdasan dan rasa ingin tahu seperti detektif, apoteker, psikolog, astronom, dan analis pemasaran."
 
@@ -355,5 +361,9 @@
 
     Private Sub BackLink_Click(sender As Object, e As EventArgs) Handles BackLink.Click
         ResetForm()
+    End Sub
+
+    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
+        Close()
     End Sub
 End Class
