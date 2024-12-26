@@ -1,13 +1,22 @@
-﻿Public Class Form1
+﻿Imports System.Data.SqlClient
+Imports System.IO
+
+Public Class Form1
+    Dim connection As New SqlConnection("Server=RVNS\SQLEXPRESS;Database=db_latihan;Integrated Security=True;")
+
     Private Const ANIMATE_SPEED As Double = 0.01
     Private Const ANIMATE_BREAKPOINT As Double = 72
+    Private BACKGROUND As Bitmap = My.Resources.bg
 
     Private ZodiacPanelImage As Bitmap
+    Private ZodiacBackground As Bitmap
     Private ZodiacLabel As String
-    Private ZodiacDescLabel As String = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, commodi! Distinctio voluptatibus esse laboriosam ipsa quaerat repellat officiis cum assumenda ea consequuntur! Aut cupiditate necessitatibus in illo alias, aliquid blanditiis!"
-    Private ZodiacCareerLabel As String = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, commodi! Distinctio voluptatibus esse laboriosam ipsa quaerat repellat officiis cum assumenda ea consequuntur! Aut cupiditate necessitatibus in illo alias, aliquid blanditiis!"
-    Private ZodiacBestPartLabel As String = "well well well"
-    Private ZodiacWorstPartLabel As String = "well well well"
+    Private ZodiacDescLabel As String = ""
+    Private ZodiacCareerLabel As String = ""
+    Private ZodiacBestPartLabel As String = ""
+    Private ZodiacWorstPartLabel As String = ""
+
+
 
     Private Async Function Delay(seconds As Double) As Task
         Await Task.Delay(seconds * 1000)
@@ -26,17 +35,17 @@
             End If
             If targetText IsNot " " Then Await Delay(speed)
         Next
-
-        '?? label.Text += vbCrLf 
     End Function
 
     Private Sub ResetForm()
-        'Setter : Enable Menu
+        Me.BackgroundImage = BACKGROUND
+
         Title.Visible = True
         Subtitle1.Visible = True
         Subtitle2.Visible = True
         DateTimePicker.Visible = True
         Calculate.Visible = True
+        HistoryButton.Visible = True
 
         LoadingText.Visible = False
         LoadingText.Text = ""
@@ -79,21 +88,20 @@
         Dim birthDate As Date = DateTimePicker.Value
         GetZodiacSign(birthDate)
 
-        'Setter : Disable Menu
         Title.Visible = False
         Subtitle1.Visible = False
         Subtitle2.Visible = False
         DateTimePicker.Visible = False
         Calculate.Visible = False
+        HistoryButton.Visible = False
 
-        'Setter : Loading State
         LoadingText.Visible = True
         Await AnimateLabel(LoadingText, "Loading...", 0.25)
-        Await Delay(1.75)
+        Await Delay(1.25)
         LoadingText.Visible = False
 
-        'Setter : Prediction Page
         ZodPanel.Visible = True
+        Me.BackgroundImage = ZodiacBackground
         ZodPanel.BackgroundImage = ZodiacPanelImage
 
         ZodLabel.Visible = True
@@ -122,10 +130,10 @@
         Await Delay(3)
 
         BackLink.Visible = True
-        AnimateLabel(BackLink, "└>  Back To Calculator", 0.075)
+        AnimateLabel(BackLink, "Back To Calculator", 0.075)
 
         ExitButton.Visible = True
-        AnimateLabel(ExitButton, "└>  Exit", 0.1)
+        AnimateLabel(ExitButton, "Exit", 0.1)
     End Sub
 
     Private Sub GetZodiacSign(birthDate As Date)
@@ -135,12 +143,14 @@
         Select Case month
             Case 1
                 If day <= 19 Then
+                    ZodiacBackground = My.Resources.bg_capricron
                     ZodiacPanelImage = My.Resources.capricron
                     ZodiacLabel = "Capricorn"
                     ZodiacBestPartLabel = "Taurus, Virgo, Pisces"
                     ZodiacWorstPartLabel = "Gemini, Leo"
                     SetZodiacLabel("capricorn")
                 Else
+                    ZodiacBackground = My.Resources.bg_aquarius
                     ZodiacPanelImage = My.Resources.aquarius
                     ZodiacLabel = "Aquarius"
                     ZodiacBestPartLabel = "Aries, Gemini, Sagittarius"
@@ -149,12 +159,14 @@
                 End If
             Case 2
                 If day <= 18 Then
+                    ZodiacBackground = My.Resources.bg_aquarius
                     ZodiacPanelImage = My.Resources.aquarius
                     ZodiacLabel = "Aquarius"
                     ZodiacBestPartLabel = "Aries, Gemini, Sagittarius"
                     ZodiacWorstPartLabel = "Taurus, Cancer"
                     SetZodiacLabel("aquarius")
                 Else
+                    ZodiacBackground = My.Resources.bg_pisces
                     ZodiacPanelImage = My.Resources.pisces
                     ZodiacLabel = "Pisces"
                     ZodiacBestPartLabel = "Cancer, Scorpio, Capricorn"
@@ -163,12 +175,14 @@
                 End If
             Case 3
                 If day <= 20 Then
+                    ZodiacBackground = My.Resources.bg_pisces
                     ZodiacPanelImage = My.Resources.aquarius
                     ZodiacLabel = "Pisces"
                     ZodiacBestPartLabel = "Cancer, Scorpio, Capricorn"
                     ZodiacWorstPartLabel = "Gemini, Aquarius"
                     SetZodiacLabel("pisces")
                 Else
+                    ZodiacBackground = My.Resources.bg_aries
                     ZodiacPanelImage = My.Resources.aries
                     ZodiacLabel = "Aries"
                     ZodiacBestPartLabel = "Leo, Sagitarius, Aquarius"
@@ -177,12 +191,14 @@
                 End If
             Case 4
                 If day <= 19 Then
+                    ZodiacBackground = My.Resources.bg_aries
                     ZodiacPanelImage = My.Resources.aries
                     ZodiacLabel = "Aries"
                     ZodiacBestPartLabel = "Leo, Sagitarius, Aquarius"
                     ZodiacWorstPartLabel = "Capricorn, Scorpio"
                     SetZodiacLabel("aries")
                 Else
+                    ZodiacBackground = My.Resources.bg_taurus
                     ZodiacPanelImage = My.Resources.taurus
                     ZodiacLabel = "Taurus"
                     ZodiacBestPartLabel = "Virgo, Cancer, Scorpio"
@@ -191,12 +207,14 @@
                 End If
             Case 5
                 If day <= 20 Then
+                    ZodiacBackground = My.Resources.bg_taurus
                     ZodiacPanelImage = My.Resources.taurus
                     ZodiacLabel = "Taurus"
                     ZodiacBestPartLabel = "Virgo, Cancer, Scorpio"
                     ZodiacWorstPartLabel = "Aries, Aquarius"
                     SetZodiacLabel("taurus")
                 Else
+                    ZodiacBackground = My.Resources.bg_gemini
                     ZodiacPanelImage = My.Resources.gemini
                     ZodiacLabel = "Gemini"
                     ZodiacBestPartLabel = "Libra, Aries, Leo"
@@ -205,12 +223,14 @@
                 End If
             Case 6
                 If day <= 20 Then
+                    ZodiacBackground = My.Resources.bg_gemini
                     ZodiacPanelImage = My.Resources.gemini
                     ZodiacLabel = "Gemini"
                     ZodiacBestPartLabel = "Libra, Aries, Leo"
                     ZodiacWorstPartLabel = "Cancer, Scorpio"
                     SetZodiacLabel("gemini")
                 Else
+                    ZodiacBackground = My.Resources.bg_cancer
                     ZodiacPanelImage = My.Resources.cancer
                     ZodiacLabel = "Cancer"
                     ZodiacBestPartLabel = "Pisces, Virgo, Taurus"
@@ -219,12 +239,14 @@
                 End If
             Case 7
                 If day <= 22 Then
+                    ZodiacBackground = My.Resources.bg_cancer
                     ZodiacPanelImage = My.Resources.cancer
                     ZodiacLabel = "Cancer"
                     ZodiacBestPartLabel = "Pisces, Virgo, Taurus"
                     ZodiacWorstPartLabel = "Aries, Leo"
                     SetZodiacLabel("cancer")
                 Else
+                    ZodiacBackground = My.Resources.bg_leo
                     ZodiacPanelImage = My.Resources.leo
                     ZodiacLabel = "Leo"
                     ZodiacBestPartLabel = "Aries, Libra, Sagitarius"
@@ -233,12 +255,14 @@
                 End If
             Case 8
                 If day <= 22 Then
+                    ZodiacBackground = My.Resources.bg_leo
                     ZodiacPanelImage = My.Resources.leo
                     ZodiacLabel = "Leo"
                     ZodiacBestPartLabel = "Aries, Libra, Sagitarius"
                     ZodiacWorstPartLabel = "Pisces, Scorpio"
                     SetZodiacLabel("leo")
                 Else
+                    ZodiacBackground = My.Resources.bg_virgo
                     ZodiacPanelImage = My.Resources.virgo
                     ZodiacLabel = "Virgo"
                     ZodiacBestPartLabel = "Scorpio, Taurus, Capricorn"
@@ -247,12 +271,14 @@
                 End If
             Case 9
                 If day <= 22 Then
+                    ZodiacBackground = My.Resources.bg_virgo
                     ZodiacPanelImage = My.Resources.virgo
                     ZodiacLabel = "Virgo"
                     ZodiacBestPartLabel = "Scorpio, Taurus, Capricorn"
                     ZodiacWorstPartLabel = "Libra, Leo"
                     SetZodiacLabel("virgo")
                 Else
+                    ZodiacBackground = My.Resources.bg_libra
                     ZodiacPanelImage = My.Resources.libra
                     ZodiacLabel = "Libra"
                     ZodiacBestPartLabel = "Aquarius, Gemini, Leo"
@@ -261,12 +287,14 @@
                 End If
             Case 10
                 If day <= 22 Then
+                    ZodiacBackground = My.Resources.bg_libra
                     ZodiacPanelImage = My.Resources.libra
                     ZodiacLabel = "Libra"
                     ZodiacBestPartLabel = "Aquarius, Gemini, Leo"
                     ZodiacWorstPartLabel = "Scorpio, Capricorn"
                     SetZodiacLabel("libra")
                 Else
+                    ZodiacBackground = My.Resources.bg_scorpio
                     ZodiacPanelImage = My.Resources.scorpio
                     ZodiacLabel = "Scorpio"
                     ZodiacBestPartLabel = "Capricorn, Pisces, Virgo"
@@ -275,12 +303,14 @@
                 End If
             Case 11
                 If day <= 21 Then
+                    ZodiacBackground = My.Resources.bg_scorpio
                     ZodiacPanelImage = My.Resources.scorpio
                     ZodiacLabel = "Scorpio"
                     ZodiacBestPartLabel = "Capricorn, Pisces, Virgo"
                     ZodiacWorstPartLabel = "Sagittarius, Gemini"
                     SetZodiacLabel("scorpio")
                 Else
+                    ZodiacBackground = My.Resources.bg_sagittarius
                     ZodiacPanelImage = My.Resources.sagittarius
                     ZodiacLabel = "Sagittarius"
                     ZodiacBestPartLabel = "Aquarius, Aries, Leo"
@@ -289,12 +319,14 @@
                 End If
             Case 12
                 If day <= 21 Then
+                    ZodiacBackground = My.Resources.bg_sagittarius
                     ZodiacPanelImage = My.Resources.sagittarius
                     ZodiacLabel = "Sagittarius"
                     ZodiacBestPartLabel = "Aquarius, Aries, Leo"
                     ZodiacWorstPartLabel = "Taurus, Virgo"
                     SetZodiacLabel("sagittarius")
                 Else
+                    ZodiacBackground = My.Resources.bg_capricron
                     ZodiacPanelImage = My.Resources.capricron
                     ZodiacLabel = "Capricorn"
                     ZodiacBestPartLabel = "Taurus, Virgo, Pisces"
@@ -365,5 +397,9 @@
 
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Close()
+    End Sub
+
+    Private Sub HistoryButton_Click(sender As Object, e As EventArgs) Handles HistoryButton.Click
+
     End Sub
 End Class

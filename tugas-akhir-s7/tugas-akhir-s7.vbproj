@@ -161,5 +161,47 @@
   <ItemGroup>
     <None Include="Resources\bg.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-capricron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-aquarius.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-pisces.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_aries.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-aries.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-taurus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-gemini.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-cancer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-leo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-virgo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-libra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-sagittarius.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg-scorpio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="db_latihan.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
