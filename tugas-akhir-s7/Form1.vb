@@ -1,5 +1,4 @@
 ﻿Imports System.Data.SqlClient
-Imports System.IO
 
 Public Class Form1
     Dim connection As New SqlConnection("Server=RVNS\SQLEXPRESS;Database=db_latihan;Integrated Security=True;")
@@ -16,7 +15,24 @@ Public Class Form1
     Private ZodiacBestPartLabel As String = ""
     Private ZodiacWorstPartLabel As String = ""
 
+    Private Function InsertHistory()
+        Try
+            connection.Open()
+            Dim query As String = "INSERT INTO history (tgl_lahir, zodiac) VALUES (@tgl_lahir, @zodiac);"
+            Dim cmd As New SqlCommand(query, connection)
 
+            cmd.Parameters.AddWithValue("@tgl_lahir", DateTimePicker.Value)
+            cmd.Parameters.AddWithValue("@zodiac", ZodiacLabel)
+
+            cmd.ExecuteNonQuery()
+            connection.Close()
+            Return True
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+            If connection.State = ConnectionState.Open Then connection.Close()
+            Return False
+        End Try
+    End Function
 
     Private Async Function Delay(seconds As Double) As Task
         Await Task.Delay(seconds * 1000)
@@ -46,6 +62,7 @@ Public Class Form1
         DateTimePicker.Visible = True
         Calculate.Visible = True
         HistoryButton.Visible = True
+        btnExit.Visible = True
 
         LoadingText.Visible = False
         LoadingText.Text = ""
@@ -87,6 +104,7 @@ Public Class Form1
     Private Async Sub Calculate_Click(sender As Object, e As EventArgs) Handles Calculate.Click
         Dim birthDate As Date = DateTimePicker.Value
         GetZodiacSign(birthDate)
+        InsertHistory()
 
         Title.Visible = False
         Subtitle1.Visible = False
@@ -94,6 +112,7 @@ Public Class Form1
         DateTimePicker.Visible = False
         Calculate.Visible = False
         HistoryButton.Visible = False
+        btnExit.Visible = False
 
         LoadingText.Visible = True
         Await AnimateLabel(LoadingText, "Loading...", 0.25)
@@ -396,10 +415,16 @@ Public Class Form1
     End Sub
 
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
-        Close()
+        Application.Exit()
     End Sub
 
     Private Sub HistoryButton_Click(sender As Object, e As EventArgs) Handles HistoryButton.Click
+        Dim form2 As New Form2()
+        form2.Show()
+        Hide()
+    End Sub
 
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        Application.Exit()
     End Sub
 End Class

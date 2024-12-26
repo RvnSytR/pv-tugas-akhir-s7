@@ -41,6 +41,7 @@ Partial Class Form1
         Me.WorstLoveLabel = New System.Windows.Forms.Label()
         Me.ExitButton = New System.Windows.Forms.Label()
         Me.HistoryButton = New System.Windows.Forms.Label()
+        Me.btnExit = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Title
@@ -121,7 +122,7 @@ Partial Class Form1
         '
         Me.ZodLabel.BackColor = System.Drawing.Color.Transparent
         Me.ZodLabel.Font = New System.Drawing.Font("Century Schoolbook", 33.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ZodLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ZodLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.ZodLabel.Location = New System.Drawing.Point(48, 281)
         Me.ZodLabel.Margin = New System.Windows.Forms.Padding(0)
         Me.ZodLabel.Name = "ZodLabel"
@@ -135,7 +136,7 @@ Partial Class Form1
         Me.ZodDesc.AutoSize = True
         Me.ZodDesc.BackColor = System.Drawing.Color.Transparent
         Me.ZodDesc.Font = New System.Drawing.Font("Century Schoolbook", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ZodDesc.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ZodDesc.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.ZodDesc.Location = New System.Drawing.Point(19, 344)
         Me.ZodDesc.Margin = New System.Windows.Forms.Padding(0)
         Me.ZodDesc.Name = "ZodDesc"
@@ -173,7 +174,7 @@ Partial Class Form1
         Me.ZodCareer.AutoSize = True
         Me.ZodCareer.BackColor = System.Drawing.Color.Transparent
         Me.ZodCareer.Font = New System.Drawing.Font("Century Schoolbook", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ZodCareer.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ZodCareer.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.ZodCareer.Location = New System.Drawing.Point(19, 490)
         Me.ZodCareer.Margin = New System.Windows.Forms.Padding(0)
         Me.ZodCareer.Name = "ZodCareer"
@@ -199,7 +200,7 @@ Partial Class Form1
         Me.ZodBestLove.AutoSize = True
         Me.ZodBestLove.BackColor = System.Drawing.Color.Transparent
         Me.ZodBestLove.Font = New System.Drawing.Font("Century Schoolbook", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ZodBestLove.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ZodBestLove.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.ZodBestLove.Location = New System.Drawing.Point(19, 638)
         Me.ZodBestLove.Margin = New System.Windows.Forms.Padding(0)
         Me.ZodBestLove.Name = "ZodBestLove"
@@ -227,7 +228,7 @@ Partial Class Form1
         Me.Calculate.BackColor = System.Drawing.Color.Transparent
         Me.Calculate.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Calculate.Font = New System.Drawing.Font("Century Schoolbook", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Calculate.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Calculate.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.Calculate.Location = New System.Drawing.Point(169, 462)
         Me.Calculate.Name = "Calculate"
         Me.Calculate.Size = New System.Drawing.Size(273, 35)
@@ -240,7 +241,7 @@ Partial Class Form1
         Me.ZodWorstLove.AutoSize = True
         Me.ZodWorstLove.BackColor = System.Drawing.Color.Transparent
         Me.ZodWorstLove.Font = New System.Drawing.Font("Century Schoolbook", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ZodWorstLove.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ZodWorstLove.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.ZodWorstLove.Location = New System.Drawing.Point(19, 703)
         Me.ZodWorstLove.Margin = New System.Windows.Forms.Padding(0)
         Me.ZodWorstLove.Name = "ZodWorstLove"
@@ -288,6 +289,19 @@ Partial Class Form1
         Me.HistoryButton.Text = "History"
         Me.HistoryButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'btnExit
+        '
+        Me.btnExit.BackColor = System.Drawing.Color.Transparent
+        Me.btnExit.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnExit.Font = New System.Drawing.Font("Century Schoolbook", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnExit.Location = New System.Drawing.Point(233, 615)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(135, 35)
+        Me.btnExit.TabIndex = 25
+        Me.btnExit.Text = "Exit"
+        Me.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 22.0!)
@@ -296,6 +310,8 @@ Partial Class Form1
         Me.BackgroundImage = Global.tugas_akhir_s7.My.Resources.Resources.bg
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(584, 861)
+        Me.ControlBox = False
+        Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.HistoryButton)
         Me.Controls.Add(Me.ExitButton)
         Me.Controls.Add(Me.BackLink)
@@ -318,7 +334,6 @@ Partial Class Form1
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Inter", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(600, 900)
@@ -329,7 +344,7 @@ Partial Class Form1
         Me.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "  "
+        Me.Text = "What Zodiac Sign Am I?"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -354,4 +369,5 @@ Partial Class Form1
     Friend WithEvents ExitButton As Label
     Private WithEvents BackLink As Label
     Friend WithEvents HistoryButton As Label
+    Friend WithEvents btnExit As Label
 End Class
